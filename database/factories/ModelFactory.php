@@ -29,5 +29,8 @@ $factory->define(User::class, function (Faker $faker) {
 });
 
 $factory->define(Story::class, function (Faker $faker) {
-    return [];
+    return [
+        'title' => $faker->sentence(3),
+        'body' => $faker->paragraphs(2, true)
+    ];
 });

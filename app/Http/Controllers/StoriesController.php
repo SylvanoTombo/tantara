@@ -15,7 +15,7 @@ class StoriesController extends Controller
     public function index()
     {
         return view('welcome', [
-            'stories' => Story::all()
+            'stories' => Story::paginate(6)
         ]);
     }
 

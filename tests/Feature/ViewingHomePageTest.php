@@ -18,6 +18,6 @@ class ViewingHomePageTest extends TestCase
 
         $response = $this->withoutExceptionHandling()->get(route('home'));
 
-        $this->assertCount(10, $response->data('stories'));
+        $this->assertCount(6, $response->data('stories'));
     }
 }
