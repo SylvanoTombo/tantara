@@ -48,7 +48,9 @@ class StoriesController extends Controller
      */
     public function show($id)
     {
-        //
+        $story = Story::findOrFail($id);
+
+        return view('stories.show', compact('story'));
     }
 
     /**
