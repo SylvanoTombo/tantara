@@ -61,3 +61,43 @@ class DashboardStoriesController extends Controller
         return redirect()->back();
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $story = Story::findOrFail($id);
+
+        return view('stories.edit', compact('story'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $story = Story::findOrFail($id);
+
+        request()->validate([
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+
+        $story->update([
+            'title' => request('title'),
+            'body' => request('body'),
+            'shared' => request('share') ? 1 : 0
+        ]);
+
+        flashy()->success('Tantara mise à jour avec succès');
+
+        return redirect()->back();
+    }
+
