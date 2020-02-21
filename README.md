@@ -1,6 +1,6 @@
 # Tantara
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![Build Status](https://travis-ci.org/SylvanoTombo/tantara.svg?branch=master)](https://travis-ci.org/SylvanoTombo/tantara)
 
 Tantara une platforme de publication d'histoire pour les passionnés. 
 Lire à tout moment et en tout lieu une sélection inégalée des histoires ecrits pas les passionnés.
