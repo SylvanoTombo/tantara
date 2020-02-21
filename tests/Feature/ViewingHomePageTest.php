@@ -14,7 +14,7 @@ class ViewingHomePageTest extends TestCase
     /** @test */
     function test_viewing_shared_stories_in_welcomepage()
     {
-        factory(Story::class, 10)->create();
+        factory(Story::class, 10)->create(['shared' => 1]);
 
         $response = $this->withoutExceptionHandling()->get(route('welcome'));
 
