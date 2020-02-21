@@ -23,7 +23,8 @@
                             <p class="">{{  Illuminate\Support\Str::words($story->body, 20) }}</p>
                             <p>
                                 <span class="text-secondary">
-                                    Ecrit par:</span> John <span class="text-secondary">le 24 Septembre 2019
+                                    Ecrit par:</span> {{ $story->user->name }} <span class="text-secondary">
+                                    {{ $story->created_at->format('j F Y') }}
                                 </span>
                             </p>
                             <p>
