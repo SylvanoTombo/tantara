@@ -4,7 +4,19 @@ php:
   - 7.4
 
 before_script:
+  - cp .env.travis .env
+  - composer self-update
+  - php artisan key:generate
   - composer install
+
+before_install:
+  - mysql -e 'CREATE DATABASE tantara;'
+
+services:
+  - phpunit
+
+script:
+  - vendor/bin/phpunit
 
 cache:
   directories:
