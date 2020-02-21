@@ -12,11 +12,11 @@ class ViewingHomePageTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    function test_viewing_shared_stories_in_homepage()
+    function test_viewing_shared_stories_in_welcomepage()
     {
         factory(Story::class, 10)->create();
 
-        $response = $this->withoutExceptionHandling()->get(route('home'));
+        $response = $this->withoutExceptionHandling()->get(route('welcome'));
 
         $this->assertCount(6, $response->data('stories'));
     }
