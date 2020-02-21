@@ -5,7 +5,7 @@
 Tantara une platforme de publication d'histoire pour les passionnés. 
 Lire à tout moment et en tout lieu une sélection inégalée des histoires ecrits pas les passionnés.
 
-Voir le [demo](https://test.herokuapp.com).
+Voir le [demo](https://tantara.herokuapp.com/).
 
 ## Installation
 
