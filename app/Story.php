@@ -9,6 +9,11 @@ class Story extends Model
 {
     protected $guarded = [];
 
+    public function scopeShared($query)
+    {
+        return $query->where('shared', 1);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

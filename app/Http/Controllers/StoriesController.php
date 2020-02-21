@@ -48,7 +48,7 @@ class StoriesController extends Controller
      */
     public function show($id)
     {
-        $story = Story::findOrFail($id);
+        $story = Story::where(['id' => $id, 'shared' => 1])->firstOrFail();
 
         return view('stories.show', compact('story'));
     }

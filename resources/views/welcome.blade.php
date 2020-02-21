@@ -24,7 +24,7 @@
                             <p>
                                 <span class="text-secondary">
                                     Ecrit par:</span> {{ $story->user->name }} <span class="text-secondary">
-                                    {{ $story->created_at->format('j F Y') }}
+                                    Le {{ $story->created_at->format('j F Y') }}
                                 </span>
                             </p>
                             <p>

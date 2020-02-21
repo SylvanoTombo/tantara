@@ -10,7 +10,7 @@ class GuestsController extends Controller
     public function index()
     {
         return view('welcome', [
-            'stories' => Story::paginate(6)
+            'stories' => Story::shared()->paginate(6)
         ]);
     }
 }
