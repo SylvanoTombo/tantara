@@ -26,3 +26,38 @@ class DashboardStoriesController extends Controller
         return view('dashboard.stories.index', compact('stories'));
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('stories.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store()
+    {
+        request()->validate([
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+
+        Story::create([
+            'title' => request('title'),
+            'body' => request('body'),
+            'shared' => request('share') ? 1 : 0,
+            'user_id' => auth()->user()->id
+        ]);
+
+        flashy()->success('Tantara créer avec succès');
+
+        return redirect()->back();
+    }
+
